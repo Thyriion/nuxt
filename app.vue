@@ -1,4 +1,7 @@
 <template>
     <Navigation />
-    <NuxtPage />
+    <main>
+        <NuxtPage />
+    </main>
+    <Footer />
 </template>

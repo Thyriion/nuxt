@@ -3,11 +3,11 @@ body {
     --custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
         Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
         sans-serif;
-    --custom-bg-color: #101010;
+    --custom-bg-color: #20262E;
     --custom-panel-color: #222;
     --custom-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
     --custom-color: #fff;
-    --custom-color-brand: #24b47e;
+    --custom-color-brand: #03C988
     --custom-color-secondary: #666;
     --custom-border: 1px solid #333;
     --custom-border-radius: 5px;
@@ -27,10 +27,36 @@ body {
 
 html,
 body,
-#__next {
+#__nuxt {
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+}
+
+#__nuxt {
+    display: grid;
+    grid-template-areas: 'header' 'main' 'footer';
+    grid-template-rows: 100px 1fr 100px;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+footer {
+    grid-area: footer;
+    font-size: 1.5rem;
+    border-top: 1px solid #913175;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Grid */

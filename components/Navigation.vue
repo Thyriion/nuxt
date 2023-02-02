@@ -9,7 +9,7 @@
                     <NuxtLink to="/about">About</NuxtLink>
                 </li>
                 <li v-if="user">
-                    <NuxtLink to="/editProfil">Edit Profil</NuxtLink>
+                    <NuxtLink to="/profile/edit">Edit Profil</NuxtLink>
                 </li>
                 <li v-else>
                     <NuxtLink to="/login">LogIn</NuxtLink>
