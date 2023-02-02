@@ -1,18 +1,19 @@
 <template>
-    <button class="logOut" @click="signOut" :disabled="loading">LogOut</button>
+    <button class="logOut" @click="signOut()">LogOut</button>
 </template>
 
 <script setup>
 const supabase = useSupabaseClient();
 
 const loading = ref(true);
+const user = useSupabaseUser();
 
-const signOut = async () => {
+async function signOut() {
     try {
+        console.log('test');
         loading.value = true;
-        const user = useSupabaseUser();
         let { error } = await supabase.auth.signOut();
-        console.log(user);
+
         if (error) throw error;
         user.value = null;
     } catch (error) {
@@ -20,5 +21,5 @@ const signOut = async () => {
     } finally {
         loading.value = false;
     }
-};
+}
 </script>

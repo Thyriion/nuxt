@@ -21,10 +21,6 @@
                 :disabled="loading"
             />
         </div>
-
-        <div>
-            <LogOut />
-        </div>
     </form>
 </template>
 

@@ -28,7 +28,8 @@ header {
                     }
 
                     &:hover::after,
-                    &:focus::after {
+                    &:focus::after,
+                    &.active::after {
                         transform: scaleX(1);
                     }
                 }
