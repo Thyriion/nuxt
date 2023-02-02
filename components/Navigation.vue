@@ -34,12 +34,11 @@
 const user = useSupabaseUser();
 const supabase = useSupabaseClient();
 
-const loading = ref(true);
+const loading = ref(false);
 async function signOut() {
     try {
         loading.value = true;
         let { error } = await supabase.auth.signOut();
-        console.log('tes');
         if (error) throw error;
         user.value = null;
     } catch (error) {
