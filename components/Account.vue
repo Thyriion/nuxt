@@ -23,9 +23,7 @@
         </div>
 
         <div>
-            <button class="button block" @click="signOut" :disabled="loading">
-                Log Out
-            </button>
+            <LogOut />
         </div>
     </form>
 </template>
@@ -69,19 +67,6 @@ async function updateProfile() {
             returning: 'minimal',
         });
         if (error) throw error;
-    } catch (error) {
-        alert(error.message);
-    } finally {
-        loading.value = false;
-    }
-}
-
-async function signOut() {
-    try {
-        loading.value = true;
-        let { error } = await supabase.auth.signOut();
-        if (error) throw error;
-        user.value = null;
     } catch (error) {
         alert(error.message);
     } finally {
